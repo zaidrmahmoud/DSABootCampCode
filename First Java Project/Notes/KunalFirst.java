@@ -10,7 +10,7 @@ public class KunalFirst {
         boolean isTrue = true;
         byte max = 10; // The max value stored in byte is from -128 to 127, anything higher will be num % 256
 
-        // ! IF YOU HIGHLIGHT SOMETHING THEN DO CTRL + / IT WILL EITHER COMMENT OR UNCOMMENT THE LINE
+        // INFO: IF YOU HIGHLIGHT SOMETHING THEN DO CTRL + / IT WILL EITHER COMMENT OR UNCOMMENT THE LINE
         // String is NOT primitive data type
         String name = "Kunal";
 

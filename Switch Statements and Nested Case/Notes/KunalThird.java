@@ -19,10 +19,10 @@ public class KunalThird {
          * break;
          * }
          */
-        // ! IF YOU DO NOT PUT 'break' STATEMENT, IT WILL CHECK THE NEXT CASES
+        // Info: IF YOU DO NOT PUT 'break' STATEMENT, IT WILL CHECK THE NEXT CASES
 
-        // ? Example:
-        // ! Regular NOT Enhanced Switch Statement
+        // Example:
+        // HACK: Regular NOT Enhanced Switch Statement
         switch (fruit) {
             case "Mango":
                 System.out.println("King of fruits");
@@ -40,7 +40,7 @@ public class KunalThird {
                 System.out.println("Please enter a valid fruit");
         }
 
-        // ! Enhanced Switch Statement, also known as Rule Switch Statement. Just hover over the word 'switch' and press Ctrl + . then convert to rule switch statement
+        // HACK: Enhanced Switch Statement, also known as Rule Switch Statement. Just hover over the word 'switch' and press Ctrl + . then convert to rule switch statement
         switch (fruit) {
             case "Mango" -> { // ! Curly braces are optional
                 System.out.println("King of fruits");
@@ -52,7 +52,7 @@ public class KunalThird {
         }
 
 
-        // ? In the following example, we are using the switch statement to determine if the day of the week is a weekday or a weekend, and it will not break till it reaches the answer.
+        // NOTE: In the following example, we are using the switch statement to determine if the day of the week is a weekday or a weekend, and it will not break till it reaches the answer.
 
         System.out.print("Enter day of the week: ");
         int dayofweek = sc.nextInt();
@@ -70,7 +70,7 @@ public class KunalThird {
                 break;
         }
         
-        // ? Enhanced Switch Statement for the above example:
+        // HACK: Enhanced Switch Statement for the above example:
 
         switch(dayofweek) {
             case 1, 2, 3, 4, 5 -> System.out.println("Weekday");
@@ -78,7 +78,7 @@ public class KunalThird {
         }
 
         // Regular Switch Statement for the following example of: 
-        // ! NESTED SWITCH STATEMENT:
+        // HACK: NESTED SWITCH STATEMENT:
         
         System.out.print("Enter EmpID: ");
         int empID = sc.nextInt();
@@ -108,7 +108,7 @@ public class KunalThird {
                 System.out.println("Enter correct EmpID");
         }
 
-        // ? Enhanced Switch Statement for the above example:
+        // HACK: Enhanced Switch Statement for the above example:
         switch (empID) {
             case 1 -> System.out.println("Kunal Kushwaha");
             case 2 -> System.out.println("Rahul Rana");
