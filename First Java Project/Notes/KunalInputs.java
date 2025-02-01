@@ -17,6 +17,6 @@ public class KunalInputs {
         byte b = (byte)(300);
         System.out.println(b); // Prints Out the Remainder
 
-        // ! If one part of an operation is double, long, or float, then everything is converted to that type.
+        // INFO: If one part of an operation is double, long, or float, then everything is converted to that type.
     }
 }

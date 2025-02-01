@@ -21,7 +21,7 @@ public class KunalQuestionOneLarger {
         }
         System.out.println("The largest number is: " + max);
 
-        // ! Another way to do this is using the Math.max() method. Syntax: Math.max(a, b)
+        // INFO: Another way to do this is using the Math.max() method. Syntax: Math.max(a, b)
         int max2 = Math.max(a, Math.max(b, c));
         System.out.println("The largest number is: " + max2);
         sc.close();
