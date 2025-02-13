@@ -1,7 +1,5 @@
 // LeetCodeHouseRobber.java
 
-
-
 public class LeetCodeHouseRobber {
     public static void main(String[] args) {
         int[] house1 = {1, 2, 3, 1}; // Should return 4
