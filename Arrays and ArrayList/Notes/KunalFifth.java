@@ -183,6 +183,20 @@ public class KunalFifth {
         // NOTE: Q4. Reverse an Array
         reverseArray(arr1); // INFO: This will reverse the array.
         System.out.println(Arrays.toString(arr1)); // OUTPUT: [50, 20, 30, 40, 10]
+
+        // IDEA: Converting ArrayList To Array of Primitive Type
+
+        ArrayList<Integer> array = new ArrayList<>(5); // Initialize the ArrayList
+        array.add(10);
+        array.add(11);
+        array.add(12);
+        array.add(13);
+        array.add(14);
+        array.add(15);
+        int[] arrr2 = new int[array.size()]; // Initialize an Array with the same length as the ArrayList
+        for (int i = 0; i < arr.length; i++) { // Create a 'for' Loop for each element in the Array
+            arrr2[i] = array.get(i); // Assign the Array element at index 'i' to the element at index 'i' in the ArrayList
+        }
     }
     static void change(int[] arr) { // INFO: This function will change the value of the first element of the array.
         arr[0] = 99;
