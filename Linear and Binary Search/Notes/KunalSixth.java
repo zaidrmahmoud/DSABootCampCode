@@ -75,6 +75,33 @@ public class KunalSixth {
         };
         int max = linearSearch2DArrayMax(arr2);
         System.out.println(max); // Output: 99
+
+        // HACK: Question 6 for Linear Searching in an Array to Find Numbers With an Even Number of Digits
+        int[] arrr2 = {12, 345, 2, 6, 7896};
+        System.out.println(linearSearchEven(arrr2)); // Output: 2
+        System.out.println(linearSearchEvenBetter(arrr2)); // Output: 2
+        // INFO: Both outputs are the same, and both programs work the exact same, but one is even simpler, better, uses less memory, and has a faster runtime which is why its better and more preferred.
+
+        // HACK: Question 7 for Linear Searching in a 2D Array to Find the Bank Account of the Richest Person
+        int [][] arr3 = {
+            {2, 8, 7},
+            {7, 1, 3},
+            {1, 9, 5}
+        };
+        System.out.println(linearSearchMaximumWealth(arr3)); // Output: 17
+
+        int [][] arrr3 = {
+            {1, 5},
+            {7, 3},
+            {3, 5}
+        };
+        System.out.println(linearSearchMaximumWealth(arrr3)); // Output: 10
+
+        int [][] arr4 = {
+            {1, 2, 3},
+            {3, 2, 1}
+        };
+        System.out.println(linearSearchMaximumWealth(arr4)); // Output 6
     }
     // IDEA: Linear Search
 
@@ -199,7 +226,7 @@ public class KunalSixth {
         return new int[] {-1, -1};
     }
 
-    // HACK: Question 5: Linear Searching in a 2D Array to Find Maximum Value
+    // HACK: Question 5: Linear Searching in a 2D Array to Find the Maximum Value
     static int linearSearch2DArrayMax(int[][] arr) {
         int max = Integer.MIN_VALUE;
         for (int[] arr1 : arr) {
@@ -208,6 +235,77 @@ public class KunalSixth {
                     max = element;
                 }
             }
+        }
+        return max;
+    }
+
+    // HACK: Question 6: Linear Searching in an Array to Find Numbers With an Even Number of Digits
+    static int linearSearchEven(int[] nums) {
+        int count = 0;
+        for (int num : nums) {
+            if (even(num)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    static int findDigits(int num) {
+        int count = 0;
+        if (num == 0) return 1;
+        if (num < 0) num *= -1;
+        while (num > 0) {
+            count++;
+            num /= 10;
+        }
+        return count;
+    }
+    // BUG: linearSearchEven but we are using the better way, 'evenBetter' and 'findDigitsBetter'
+    static int linearSearchEvenBetter(int[] nums) {
+        int count = 0;
+        for (int num : nums) {
+            if (evenBetter(num)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    // BUG: Simpler way to do the 'findDigits' Function
+    static int findDigitsBetter(int num) {
+        return (int)(Math.log10(num) + 1);
+    }
+    // INFO: Explanation for the Code Above:
+    // INFO: First of all, the reason we do '+1' is because this gives the number of digits as if its an index, so starting from 0, but we want it starting from 1 so we add 1.
+    // INFO: Basically, log10 makes it so that every time a number is multiplied by 10, it increases by 1.
+    // INFO: So, log10(10) + 1 is 2 because there is 2 digits.
+    // INFO: For example, log10(999) + 1 is 3, because log10(999) on the calculator is around 2.99999..., and we made it of type 'int', so it removes/truncates the decimal place, then we add 1 as explained above.
+
+    static boolean even(int num) {
+        int numberOfDigits = findDigits(num);
+        return numberOfDigits % 2 == 0;
+    }
+    
+    // BUG: Even Method Using Better 'findDigitsBetter'
+    static boolean evenBetter(int num) {
+        int numberOfDigits = findDigitsBetter(num);
+        return numberOfDigits % 2 == 0;
+    }
+
+    // https://leetcode.com/problems/richest-customer-wealth/description/
+    // HACK: Question 7: Linear Searching in a 2D Array to Find the Richest Bank Customer
+    static int linearSearchMaximumWealth(int[][] accounts) {
+        int max = Integer.MIN_VALUE;
+        int sum = 0;
+        int person1;
+        for (int[] person : accounts) {
+            for (int account : person) {
+                sum += account;
+            }
+            if (sum > max) {
+                max = sum;
+            }
+            sum = 0;
         }
         return max;
     }
